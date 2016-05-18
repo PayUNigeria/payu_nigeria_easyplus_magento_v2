@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="redirectpaymentmethod" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>PayU Easy and Business Merchant</label>
+                <comment>
+                    <![CDATA[<a href="https://payu.co.za/" target="_blank">Click here to sign up for PayU account</a>]]>
+                </comment>
+                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="safe_key" translate="label" type="obscure" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Safe Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="api_username" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API Username</label>
+                </field>
+                <field id="api_password" translate="label" type="obscure" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>API Password</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                </field>
+                <field id="merchant_ref" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Merchant Reference</label>
+                </field>
+                <field id="debug" translate="label" type="select" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Debug</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="payment_action" translate="label" type="select" sortOrder="8" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Payment Action</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Payment\Action</source_model>
+                    <comment>For Magento internal use. Leave default value if in doubt</comment>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Order\Status\Pendingpayment</source_model>
+                    <comment>For Magento internal use. Leave default value if in doubt</comment>
+                </field>
+                <field id="payment_methods" translate="label" type="multiselect" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Payment methods</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Payment\Method</source_model>
+                </field>
+                <field id="payment_type" translate="label" type="select" sortOrder="11" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Type of transaction</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Transaction\Type</source_model>
+                </field>
+                <field id="allowed_currency" translate="label" type="select" sortOrder="12" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Accepted currency</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale\Currency</source_model>
+                </field>
+                <field id="gateway" translate="label" type="select" sortOrder="13" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Payment gateway</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Payment\Gateway</source_model>
+                </field>
+                <field id="secure3d" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1"      showInStore="1">
+                    <label>Secure3d</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="redirect_channel" translate="label" type="select" sortOrder="51" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Redirect Channel</label>
+                    <source_model>PayU\EasyPlus\Model\Config\Source\Redirect\Channel</source_model>
+                </field>
+                <field id="min_order_total" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Minimum Order Total</label>
+                    <comment>Cannot be less than R50.00</comment>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+                <field id="max_order_total" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Maximum Order Total</label>
+                    <comment>Cannot be more than R5,000,000.00</comment>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <frontend_class>validate-number</frontend_class>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

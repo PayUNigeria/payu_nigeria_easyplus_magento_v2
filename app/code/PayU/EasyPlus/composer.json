@@ -1,0 +1,29 @@
+{
+    "name": "payu/module-easy-plus",
+    "description": "Secure payment processing via PayU South Africa",
+    "keywords": [
+        "payu",
+        "easy and plus merchant",
+        "payment processing",
+        "api"
+    ],
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "homepage": "https://payu.co.za/",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "authors": [
+        {
+            "name": "Kenneth Onah",
+            "homepage": "https://github.com/onahkenneth/payu-easymerchant/contributors"
+        }
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "EasyMerchant\\": "lib/"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <redirectpaymentmethod>
+                <model>PayU\EasyPlus\Model\RedirectPaymentMethod</model>
+                <active>0</active>
+                <title>PayU (Credit/Debit Card)</title>
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <secure3d>0</secure3d>
+                <redirect_channel>responsive</redirect_channel>
+                <merchant_ref>PayU Easy/Plus Merchant Store</merchant_ref>
+                <safe_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <api_username>Staging Integration Store 3</api_username>
+                <api_password backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <payment_methods>CREDITCARD,EBUCKS,PAYPAL</payment_methods>
+                <payment_type>PAYMENT</payment_type>
+                <allowed_currency>ZAR</allowed_currency>
+                <gateway>0</gateway>
+                <secure3d>1</secure3d>
+                <redirect_channel>responsive</redirect_channel>
+                <min_order_total>50</min_order_total>
+                <max_order_total>5000000</max_order_total>
+                <sort_order>1</sort_order>
+            </redirectpaymentmethod>
+        </payment>
+    </default>
+</config>
