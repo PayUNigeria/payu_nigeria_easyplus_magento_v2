@@ -23,8 +23,8 @@ For using composer installation Please find the complete link explained by Alan 
 4. After the successful installation you have to run the command on Magento2 root directory. “php bin/magento setup:upgrade”
 
 ![root1](https://cloud.githubusercontent.com/assets/5717025/15351203/6e689966-1cde-11e6-8c4b-2d3fd070e546.png)
-
 5. Also, run this commands in the Magento2 Root. You can refer the below screenshot.
+
 ![root2](https://cloud.githubusercontent.com/assets/5717025/15351229/90c33138-1cde-11e6-9567-043855351528.png)
 6. After running the above command, run this also to clear Magento cache.
 “php bin/magento cache:clean”
